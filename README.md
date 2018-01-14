@@ -1,6 +1,6 @@
 # NgxImageViewer
 
-This project contains a configurable image viewer, for use with Angular projects.
+A configurable Angular image viewer component, compatible with Angular 2.x, 4.x and 5.x
 
 ## Features:
  * Compatible with Angular 2.x, 4.x and 5.x
@@ -17,6 +17,8 @@ This project contains a configurable image viewer, for use with Angular projects
 To use default configuration, simply import the ImageViewerModule into your module, like so:
 
 ```javascript
+import { ImageViewerModule } from "ngx-image-viewer";
+
 @NgModule({
   //...
   imports: [
@@ -34,6 +36,16 @@ Then, add the component to your template, providing an array of image URLs. You 
 ```
 
 By default, the image viewer will fill its container. If you wish to restrict the size, simply place it within a div, and set the size constraints on the div.
+
+
+If you want to use the standard icons, you will also need to install `font-awesome`
+
+```
+npm install --save font-awesome
+```
+
+Otherwise, you will need to use the configuration to set different icon classes.
+
 
 ---
 
