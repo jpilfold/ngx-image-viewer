@@ -1,0 +1,33 @@
+<div [nivToggleFullscreen]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor" (wheel)="scrollZoom($event)"
+  (dragover)="onDragOver($event)">
+  <img [src]="src[index]" [ngStyle]="style" alt="Image not found..." (dragstart)="onDragStart($event)" />
+  <!-- Div below will be used to hide the 'ghost' image when dragging -->
+  <div></div>
+
+  <button [class]="config.btnClass" (click)="rotateCounterClockwise()">
+    <span [class]="config.btnIcons.rotateCounterClockwise"></span>
+  </button>
+  <button [class]="config.btnClass" (click)="rotateClockwise()">
+    <span [class]="config.btnIcons.rotateClockwise"></span>
+  </button>
+
+  <button [class]="config.btnClass" (click)="zoomOut()">
+    <span [class]="config.btnIcons.zoomOut"></span>
+  </button>
+  <button [class]="config.btnClass" (click)="zoomIn()">
+    <span [class]="config.btnIcons.zoomIn"></span>
+  </button>
+
+  <button id="niv-fs-btn" [class]="config.btnClass" (click)="toggleFullscreen()" *ngIf="config.allowFullscreen">
+    <span [class]="config.btnIcons.fullscreen"></span>
+  </button>
+
+  <div class="nav-button-container" *ngIf="src.length > 1">
+    <button [class]="config.btnClass" (click)="prevImage()" [disabled]="index === 0">
+      <span [class]="config.btnIcons.prev"></span>
+    </button>
+    <button [class]="config.btnClass" (click)="nextImage()" [disabled]="index === src.length - 1">
+      <span [class]="config.btnIcons.next"></span>
+    </button>
+  </div>
+</div>

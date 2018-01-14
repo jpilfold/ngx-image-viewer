@@ -1,27 +1,63 @@
 # NgxImageViewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
+This project contains a configurable image viewer, for use with Angular projects.
 
-## Development server
+## Features:
+ * Compatible with Angular 2.x, 4.x and 5.x
+ * Configurable
+ * Rotate image
+ * Zoom image
+ * Drag to move image
+ * Toggle fullscreen mode
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Set up
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To use default configuration, simply import the ImageViewerModule into your module, like so:
 
-## Build
+```javascript
+@NgModule({
+  //...
+  imports: [
+    //...
+    ImageViewerModule.forRoot()
+  ],
+  //...
+})
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Then, add the component to your template, providing an array of image URLs. You can also optionally add an index, to indicate which image should be shown first. The default will be the first item in the array.
 
-## Running unit tests
+```html
+<niv-image-viewer  [src]="images"></niv-image-viewer>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+By default, the image viewer will fill its container. If you wish to restrict the size, simply place it within a div, and set the size constraints on the div.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Configuration
 
-## Further help
+Configuration can be provided at the module level (by passing the object as an argument to `forRoot()`, or at the component level, by passing it as the `config` input. Any configuration provided at the component level will override that which is set at the module level.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The configuration object is structured as below. All values are optional, and if ommitted, the default value shown below will be used.
+
+```javascript
+{
+  btnClass: 'default', // The CSS class(es) that will apply to the buttons
+  zoomFactor: 0.1, // The amount that the scale will be increased by
+  containerBackgroundColor: '#ccc', // The color to use for the background. This can provided in hex, or rgb(a).
+  wheelZoom: true, // If true, the mouse wheel can be used to zoom in
+  allowFullscreen: true, // If true, the fullscreen button will be shown, allowing the user to entr fullscreen mode
+  btnIcons: { // The icon classes that will apply to the buttons. By default, font-awesome is used.
+    zoomIn: 'fa fa-plus',
+    zoomOut: 'fa fa-minus',
+    rotateClockwise: 'fa fa-repeat',
+    rotateCounterClockwise: 'fa fa-undo',
+    next: 'fa fa-arrow-right',
+    prev: 'fa fa-arrow-left',
+    fullscreen: 'fa fa-arrows-alt',
+  }
+};
+```

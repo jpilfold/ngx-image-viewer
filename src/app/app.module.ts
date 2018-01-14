@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ImageViewerModule } from './image-viewer/image-viewer.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ImageViewerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
