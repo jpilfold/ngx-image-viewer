@@ -10,6 +10,10 @@ A configurable Angular image viewer component, compatible with Angular 2.x, 4.x 
  * Drag to move image
  * Toggle fullscreen mode
 
+## DEMO
+
+https://angular-2wrbwp.stackblitz.io/
+
 ---
 
 ## Set up
