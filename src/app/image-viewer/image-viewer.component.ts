@@ -59,8 +59,6 @@ export class ImageViewerComponent implements OnInit {
   zoomOut() {
     if (this.scale > this.config.zoomFactor) {
       this.scale /= (1 + this.config.zoomFactor);
-    } else {
-      this.scale = this.config.zoomFactor;
     }
     this.updateStyle();
   }
@@ -93,8 +91,8 @@ export class ImageViewerComponent implements OnInit {
   }
 
   onDragOver(evt) {
-    this.translateX += (evt.screenX - this.prevX) / this.scale;
-    this.translateY += (evt.screenY - this.prevY) / this.scale;
+    this.translateX += (evt.screenX - this.prevX);
+    this.translateY += (evt.screenY - this.prevY);
     this.prevX = evt.screenX;
     this.prevY = evt.screenY;
     this.updateStyle();
@@ -114,7 +112,7 @@ export class ImageViewerComponent implements OnInit {
   }
 
   private updateStyle() {
-    this.style.transform = `scale(${this.scale}) rotate(${this.rotation}deg) translate(${this.translateX}px, ${this.translateY}px)`;
+    this.style.transform = `translate(${this.translateX}px, ${this.translateY}px) rotate(${this.rotation}deg) scale(${this.scale})`;
     this.style.msTransform = this.style.transform;
     this.style.webkitTransform = this.style.transform;
     this.style.oTransform = this.style.transform;
