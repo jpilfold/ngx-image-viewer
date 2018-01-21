@@ -2,11 +2,11 @@ import { Directive, HostListener, OnChanges, Input, ElementRef } from '@angular/
 import * as screenfull from 'screenfull';
 
 @Directive({
-    selector: '[nivToggleFullscreen]'
+    selector: '[ngxToggleFullscreen]'
 })
 export class ToggleFullscreenDirective implements OnChanges {
 
-    @Input('nivToggleFullscreen')
+    @Input('ngxToggleFullscreen')
     isFullscreen: boolean;
 
     constructor(private el: ElementRef) { }

@@ -20,7 +20,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
 };
 
 @Component({
-  selector: 'niv-image-viewer',
+  selector: 'ngx-image-viewer',
   templateUrl: './image-viewer.component.html',
   styleUrls: ['./image-viewer.component.scss']
 })

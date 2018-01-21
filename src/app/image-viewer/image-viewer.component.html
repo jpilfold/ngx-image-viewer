@@ -1,4 +1,4 @@
-<div [nivToggleFullscreen]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor" (wheel)="scrollZoom($event)"
+<div [ngxToggleFullscreen]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor" (wheel)="scrollZoom($event)"
   (dragover)="onDragOver($event)">
   <img [src]="src[index]" [ngStyle]="style" alt="Image not found..." (dragstart)="onDragStart($event)" />
   <!-- Div below will be used to hide the 'ghost' image when dragging -->
@@ -18,7 +18,7 @@
     <span [class]="config.btnIcons.zoomIn"></span>
   </button>
 
-  <button id="niv-fs-btn" [class]="config.btnClass" (click)="toggleFullscreen()" *ngIf="config.allowFullscreen">
+  <button id="ngx-fs-btn" [class]="config.btnClass" (click)="toggleFullscreen()" *ngIf="config.allowFullscreen">
     <span [class]="config.btnIcons.fullscreen"></span>
   </button>
 

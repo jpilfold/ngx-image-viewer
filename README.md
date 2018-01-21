@@ -36,7 +36,7 @@ import { ImageViewerModule } from "ngx-image-viewer";
 Then, add the component to your template, providing an array of image URLs. You can also optionally add an index, to indicate which image should be shown first. The default will be the first item in the array.
 
 ```html
-<niv-image-viewer  [src]="images"></niv-image-viewer>
+<ngx-image-viewer  [src]="images"></ngx-image-viewer>
 ```
 
 By default, the image viewer will fill its container. If you wish to restrict the size, simply place it within a div, and set the size constraints on the div.

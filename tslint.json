@@ -121,13 +121,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "niv",
+      "ngx",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "niv",
+      "ngx",
       "kebab-case"
     ],
     "no-output-on-prefix": true,
