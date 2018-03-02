@@ -4,17 +4,17 @@
   <!-- Div below will be used to hide the 'ghost' image when dragging -->
   <div></div>
 
-  <button [class]="config.btnClass" (click)="rotateCounterClockwise()">
+  <button [class]="config.btnClass" *ngIf="config.btnShow.rotateCounterClockwise" (click)="rotateCounterClockwise()">
     <span [class]="config.btnIcons.rotateCounterClockwise"></span>
   </button>
-  <button [class]="config.btnClass" (click)="rotateClockwise()">
+  <button [class]="config.btnClass" *ngIf="config.btnShow.rotateClockwise" (click)="rotateClockwise()">
     <span [class]="config.btnIcons.rotateClockwise"></span>
   </button>
 
-  <button [class]="config.btnClass" (click)="zoomOut()">
+  <button [class]="config.btnClass" *ngIf="config.btnShow.zoomOut" (click)="zoomOut()">
     <span [class]="config.btnIcons.zoomOut"></span>
   </button>
-  <button [class]="config.btnClass" (click)="zoomIn()">
+  <button [class]="config.btnClass" *ngIf="config.btnShow.zoomIn" (click)="zoomIn()">
     <span [class]="config.btnIcons.zoomIn"></span>
   </button>
 
