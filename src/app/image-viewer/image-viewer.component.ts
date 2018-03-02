@@ -14,8 +14,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
     rotateClockwise: true,
     rotateCounterClockwise: true,
     next: true,
-    prev: true,
-    fullscreen: true,
+    prev: true
   },
   btnIcons: {
     zoomIn: 'fa fa-plus',
