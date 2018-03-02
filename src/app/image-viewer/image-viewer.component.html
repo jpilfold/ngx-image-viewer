@@ -4,7 +4,7 @@
   <!-- Div below will be used to hide the 'ghost' image when dragging -->
   <div></div>
 
-  <button [class]="config.btnClass" (click)="rotateCounterClockwise()">
+  <button [class]="config.btnClass" *ngIf="config.btnAvailable.rotateCounterClockwise" (click)="rotateCounterClockwise()">
     <span [class]="config.btnIcons.rotateCounterClockwise"></span>
   </button>
   <button [class]="config.btnClass" (click)="rotateClockwise()">

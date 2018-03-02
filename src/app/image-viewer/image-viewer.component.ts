@@ -8,6 +8,15 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   containerBackgroundColor: '#ccc',
   wheelZoom: true,
   allowFullscreen: true,
+  btnShow: {
+    zoomIn: true,
+    zoomOut: true,
+    rotateClockwise: true,
+    rotateCounterClockwise: true,
+    next: true,
+    prev: true,
+    fullscreen: true,
+  },
   btnIcons: {
     zoomIn: 'fa fa-plus',
     zoomOut: 'fa fa-minus',
