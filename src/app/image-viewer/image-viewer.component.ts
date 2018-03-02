@@ -91,17 +91,17 @@ export class ImageViewerComponent implements OnInit {
   }
 
   onDragOver(evt) {
-    this.translateX += (evt.screenX - this.prevX);
-    this.translateY += (evt.screenY - this.prevY);
-    this.prevX = evt.screenX;
-    this.prevY = evt.screenY;
+    this.translateX += (evt.clientX - this.prevX);
+    this.translateY += (evt.clientY - this.prevY);
+    this.prevX = evt.clientX;
+    this.prevY = evt.clientY;
     this.updateStyle();
   }
 
   onDragStart(evt) {
     evt.dataTransfer.setDragImage(evt.target.nextElementSibling, 0, 0);
-    this.prevX = evt.screenX;
-    this.prevY = evt.screenY;
+    this.prevX = evt.clientX;
+    this.prevY = evt.clientY;
   }
 
   toggleFullscreen() {
