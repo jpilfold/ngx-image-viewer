@@ -5,6 +5,16 @@ export interface ImageViewerConfig {
     wheelZoom?: boolean;
     allowFullscreen?: boolean;
 
+    btnShow?: {
+      zoomIn?: boolean;
+      zoomOut?: boolean;
+      rotateClockwise?: boolean;
+      rotateCounterClockwise?: boolean;
+      next?: boolean;
+      prev?: boolean;
+      fullscreen?: boolean;
+    };
+
     btnIcons?: {
         zoomIn?: string;
         zoomOut?: string;
