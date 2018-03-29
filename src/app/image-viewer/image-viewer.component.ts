@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, ViewChild, Optional, Inject } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import {Component, OnInit, Input, Optional, Inject, Output, EventEmitter} from '@angular/core';
 import { ImageViewerConfig } from './image-viewer-config.model';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
@@ -42,6 +41,9 @@ export class ImageViewerComponent implements OnInit {
 
   @Input()
   config: ImageViewerConfig;
+
+  @Output()
+  customEvent: EventEmitter<any> = new EventEmitter();
 
   public style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
   public fullscreen = false;
@@ -117,6 +119,10 @@ export class ImageViewerComponent implements OnInit {
     if (!this.fullscreen) {
       this.reset();
     }
+  }
+
+  fireCustomeEvent(name, index) {
+    this.customEvent.emit({name: name, index: index});
   }
 
   private updateStyle() {

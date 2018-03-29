@@ -24,4 +24,10 @@ export interface ImageViewerConfig {
         fullscreen?: string;
     };
 
+    customBtns?: [
+      {
+        name: string;
+        icon: string;
+      }
+    ];
 }

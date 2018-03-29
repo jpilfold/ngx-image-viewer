@@ -77,3 +77,24 @@ The configuration object is structured as below. All values are optional, and if
   }
 };
 ```
+
+To add additional buttons use the following 
+
+```html 
+<ngx-image-viewer [src]="images" 
+                  [config]="{customBtns:[{name: 'link', icon: 'fa fa-paperclip'}]}"
+                  (customEvent)="handleEvent($event)">
+</ngx-image-viewer>
+```
+
+```javascript
+handleEvent(event) {
+    if(event.name == 'print') {
+      console.log(`Print has been click on img ${event.index +1}`);
+    }
+}
+```
+
+Note: currently only 3 additional buttons is supported due to css
+
+

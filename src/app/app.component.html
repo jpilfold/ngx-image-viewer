@@ -1,4 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="width: 50%;" >
-    <ngx-image-viewer  [src]="images"></ngx-image-viewer>
+    <ngx-image-viewer [src]="images"
+                      [config]="{customBtns:[{name: 'print', icon: 'fa fa-print'}]}"
+                      (customEvent)="handleEvent($event)">
+    </ngx-image-viewer>
 </div>

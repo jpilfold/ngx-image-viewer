@@ -20,8 +20,8 @@
     cursor: pointer;
 }
 
-@for $i from 1 through 4 {
-    .img-container > button:nth-of-type(#{$i}) {
+@for $i from 1 through 7 {
+    .img-container > button:nth-of-type(#{$i}):not(#ngx-fs-btn) {
         bottom: 15px + (50px * ($i - 1))
     }
 }
