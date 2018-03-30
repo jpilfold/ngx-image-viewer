@@ -17,7 +17,10 @@
     z-index: 99;
     position: absolute;
     right: 15px;
-    cursor: pointer;
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
 }
 
 @for $i from 1 through 7 {

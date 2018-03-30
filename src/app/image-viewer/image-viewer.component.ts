@@ -121,7 +121,7 @@ export class ImageViewerComponent implements OnInit {
     }
   }
 
-  fireCustomeEvent(name, index) {
+  fireCustomEvent(name, index) {
     this.customEvent.emit({name: name, index: index});
   }
 

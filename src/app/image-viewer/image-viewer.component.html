@@ -18,7 +18,7 @@
     <span [class]="config.btnIcons.zoomIn"></span>
   </button>
 
-  <button [class]="config.btnClass" *ngFor="let cBtn of config.customBtns" (click)="fireCustomeEvent(cBtn.name, index)">
+  <button [class]="config.btnClass" *ngFor="let cBtn of config.customBtns" (click)="fireCustomEvent(cBtn.name, index)">
     <span [class]="cBtn.icon"></span>
   </button>
 
