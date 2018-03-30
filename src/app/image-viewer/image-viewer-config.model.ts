@@ -36,7 +36,7 @@ export class CustomEvent {
   name: string;
   imageIndex: number;
 
-  constructor(name, imageIndex){
+  constructor(name, imageIndex) {
     this.name = name;
     this.imageIndex = imageIndex;
   }
