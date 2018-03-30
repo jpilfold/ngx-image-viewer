@@ -16,7 +16,7 @@ export class AppComponent {
 
   handleEvent(event) {
     if (event.name === 'print') {
-      console.log(`Print has been click on img ${event.index + 1}`);
+      console.log(`Print has been click on img ${event.imageIndex + 1}`);
     }
   }
 }

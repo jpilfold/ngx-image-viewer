@@ -121,8 +121,8 @@ export class ImageViewerComponent implements OnInit {
     }
   }
 
-  fireCustomEvent(name, index) {
-    this.customEvent.emit({name: name, index: index});
+  fireCustomEvent(name, imageIndex) {
+    this.customEvent.emit({name: name, imageIndex: imageIndex});
   }
 
   private updateStyle() {
