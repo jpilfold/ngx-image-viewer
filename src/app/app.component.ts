@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'ngx-root',
@@ -15,8 +15,8 @@ export class AppComponent {
   ];
 
   handleEvent(event) {
-    if(event.name == 'print') {
-      console.log(`Print has been click on img ${event.index +1}`);
+    if (event.name === 'print') {
+      console.log(`Print has been click on img ${event.index + 1}`);
     }
   }
 }
