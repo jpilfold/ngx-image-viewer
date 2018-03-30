@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Optional, Inject, Output, EventEmitter} from '@angular/core';
-import { ImageViewerConfig } from './image-viewer-config.model';
+import { ImageViewerConfig, CustomEvent } from './image-viewer-config.model';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
@@ -43,7 +43,7 @@ export class ImageViewerComponent implements OnInit {
   config: ImageViewerConfig;
 
   @Output()
-  customEvent: EventEmitter<any> = new EventEmitter();
+  customEvent: EventEmitter<CustomEvent> = new EventEmitter();
 
   public style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
   public fullscreen = false;
@@ -122,7 +122,7 @@ export class ImageViewerComponent implements OnInit {
   }
 
   fireCustomEvent(name, imageIndex) {
-    this.customEvent.emit({name: name, imageIndex: imageIndex});
+    this.customEvent.emit(new CustomEvent(name, imageIndex));
   }
 
   private updateStyle() {
