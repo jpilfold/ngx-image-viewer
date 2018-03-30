@@ -1,5 +1,5 @@
-<div [ngxToggleFullscreen]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor" (wheel)="scrollZoom($event)"
-  (dragover)="onDragOver($event)">
+<div [ngxToggleFullscreen]="fullscreen" class="img-container" [style.backgroundColor]="config.containerBackgroundColor"
+     (wheel)="scrollZoom($event)" (dragover)="onDragOver($event)">
   <img [src]="src[index]" [ngStyle]="style" alt="Image not found..." (dragstart)="onDragStart($event)" />
   <!-- Div below will be used to hide the 'ghost' image when dragging -->
   <div></div>
@@ -16,6 +16,10 @@
   </button>
   <button [class]="config.btnClass" *ngIf="config.btnShow.zoomIn" (click)="zoomIn()">
     <span [class]="config.btnIcons.zoomIn"></span>
+  </button>
+
+  <button [class]="config.btnClass" *ngFor="let cBtn of config.customBtns" (click)="fireCustomEvent(cBtn.name, index)">
+    <span [class]="cBtn.icon"></span>
   </button>
 
   <button id="ngx-fs-btn" [class]="config.btnClass" (click)="toggleFullscreen()" *ngIf="config.allowFullscreen">

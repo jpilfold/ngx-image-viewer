@@ -24,4 +24,20 @@ export interface ImageViewerConfig {
         fullscreen?: string;
     };
 
+    customBtns?: [
+      {
+        name: string;
+        icon: string;
+      }
+    ];
+}
+
+export class CustomEvent {
+  name: string;
+  imageIndex: number;
+
+  constructor(name, imageIndex){
+    this.name = name;
+    this.imageIndex = imageIndex;
+  }
 }
