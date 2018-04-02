@@ -1,7 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="width: 50%;" >
+<div style="display: flex">
+  <div style="width: 50%;">
     <ngx-image-viewer [src]="images"
-                      [config]="{customBtns:[{name: 'print', icon: 'fa fa-print'}]}"
+                      [(config)]="config"
+                      [(index)]="imageIndex"
                       (customEvent)="handleEvent($event)">
     </ngx-image-viewer>
 </div>
