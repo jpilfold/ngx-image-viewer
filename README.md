@@ -36,7 +36,7 @@ import { ImageViewerModule } from "ngx-image-viewer";
 Then, add the component to your template, providing an array of image URLs. You can also optionally add an index, to indicate which image should be shown first. The default will be the first item in the array.
 
 ```html
-<ngx-image-viewer  [src]="images"></ngx-image-viewer>
+<ngx-image-viewer  [src]="images" [(index)]="imageIndex"></ngx-image-viewer>
 ```
 
 By default, the image viewer will fill its container. If you wish to restrict the size, simply place it within a div, and set the size constraints on the div.
@@ -88,9 +88,13 @@ To add additional buttons use the following
 ```
 
 ```javascript
-handleEvent(event) {
-    if(event.name == 'print') {
-      console.log(`Print has been click on img ${event.index +1}`);
+handleEvent(event: CustomEvent) {
+    console.log(`${event.name} has been click on img ${event.imageIndex + 1}`);
+
+    switch (event.name) {
+      case 'print':
+        console.log('run print logic');
+        break;
     }
 }
 ```

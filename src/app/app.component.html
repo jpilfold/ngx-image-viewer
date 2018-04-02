@@ -4,34 +4,6 @@
     <ngx-image-viewer [src]="images"
                       [(config)]="config"
                       [(index)]="imageIndex"
-                      (indexChange)="updateConfig($event)"
                       (customEvent)="handleEvent($event)">
     </ngx-image-viewer>
-  </div>
-  <div style="width: 5%;"></div>
-  <div style="width: 40%;">
-    <div>
-      <h4>Current Image Index: <input type="number" [(ngModel)]="imageIndex" min="0" [max]="images.length -1"/></h4>
-
-    </div>
-    <div>
-      <button (click)="config.customBtns.push({name: '', icon: ''})" [disabled]="config.customBtns.length >= 3">
-        Add Custom Button
-      </button>
-      <div *ngFor="let cbtn of config.customBtns; let i = idx" style="flex">
-        <input [(ngModel)]="cbtn.name" placeholder="name"/>
-        <input [(ngModel)]="cbtn.icon" placeholder="font icon (class)"/>
-        <button (click)="config.customBtns.splice(idx,1)">remove</button>
-      </div>
-    </div>
-    <div>
-      <h4>Using Binds to customize buttons</h4>
-      <div>
-        <div>Image Index: <input [(ngModel)]="customConfig.imageIndex" /></div>
-        <div>From Name: <input [(ngModel)]="customConfig.fromName" /></div>
-        <div>To Name: <input [(ngModel)]="customConfig.toName" /></div>
-        <div>To Icon: <input [(ngModel)]="customConfig.toIcon" /></div>
-      </div>
-    </div>
-  </div>
 </div>
