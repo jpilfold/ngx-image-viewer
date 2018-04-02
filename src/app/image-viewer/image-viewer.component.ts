@@ -43,6 +43,12 @@ export class ImageViewerComponent implements OnInit {
   config: ImageViewerConfig;
 
   @Output()
+  indexChange: EventEmitter<number> = new EventEmitter();
+
+  @Output()
+  configChange: EventEmitter<ImageViewerConfig> = new EventEmitter();
+
+  @Output()
   customEvent: EventEmitter<CustomEvent> = new EventEmitter();
 
   public style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
@@ -59,6 +65,7 @@ export class ImageViewerComponent implements OnInit {
   ngOnInit() {
     const merged = this.mergeConfig(DEFAULT_CONFIG, this.moduleConfig);
     this.config = this.mergeConfig(merged, this.config);
+    this.triggerConfigBinding();
   }
 
   zoomIn() {
@@ -92,11 +99,13 @@ export class ImageViewerComponent implements OnInit {
 
   nextImage() {
     this.index++;
+    this.triggerIndexBinding();
     this.reset();
   }
 
   prevImage() {
     this.index--;
+    this.triggerIndexBinding();
     this.reset();
   }
 
@@ -119,6 +128,14 @@ export class ImageViewerComponent implements OnInit {
     if (!this.fullscreen) {
       this.reset();
     }
+  }
+
+  triggerIndexBinding() {
+    this.indexChange.emit(this.index);
+  }
+
+  triggerConfigBinding() {
+    this.configChange.next(this.config);
   }
 
   fireCustomEvent(name, imageIndex) {

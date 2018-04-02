@@ -24,12 +24,12 @@ export interface ImageViewerConfig {
         fullscreen?: string;
     };
 
-    customBtns?: [
+    customBtns?: Array<
       {
         name: string;
         icon: string;
       }
-    ];
+    >;
 }
 
 export class CustomEvent {
