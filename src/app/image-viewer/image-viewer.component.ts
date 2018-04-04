@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Optional, Inject, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Optional, Inject, Output, EventEmitter, HostListener} from '@angular/core';
 import { ImageViewerConfig, CustomEvent } from './image-viewer-config.model';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
@@ -7,6 +7,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   containerBackgroundColor: '#ccc',
   wheelZoom: true,
   allowFullscreen: true,
+  allowKeyboardNavigation: true,
   btnShow: {
     zoomIn: true,
     zoomOut: true,
@@ -68,6 +69,24 @@ export class ImageViewerComponent implements OnInit {
     this.triggerConfigBinding();
   }
 
+  @HostListener('window:keyup.ArrowRight',  ['$event'])
+  nextImage(event) {
+    if (this.canNavigate(event) && this.index < this.src.length - 1) {
+      this.index++;
+      this.triggerIndexBinding();
+      this.reset();
+    }
+  }
+
+  @HostListener('window:keyup.ArrowLeft', ['$event'])
+  prevImage(event) {
+    if (this.canNavigate(event) && this.index > 0) {
+      this.index--;
+      this.triggerIndexBinding();
+      this.reset();
+    }
+  }
+
   zoomIn() {
     this.scale *= (1 + this.config.zoomFactor);
     this.updateStyle();
@@ -95,18 +114,6 @@ export class ImageViewerComponent implements OnInit {
   rotateCounterClockwise() {
     this.rotation -= 90;
     this.updateStyle();
-  }
-
-  nextImage() {
-    this.index++;
-    this.triggerIndexBinding();
-    this.reset();
-  }
-
-  prevImage() {
-    this.index--;
-    this.triggerIndexBinding();
-    this.reset();
   }
 
   onDragOver(evt) {
@@ -140,6 +147,10 @@ export class ImageViewerComponent implements OnInit {
 
   fireCustomEvent(name, imageIndex) {
     this.customEvent.emit(new CustomEvent(name, imageIndex));
+  }
+
+  private canNavigate(event: any) {
+    return event == null ||  this.config.allowKeyboardNavigation;
   }
 
   private updateStyle() {

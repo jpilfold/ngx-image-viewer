@@ -4,6 +4,7 @@ export interface ImageViewerConfig {
     containerBackgroundColor?: string;
     wheelZoom?: boolean;
     allowFullscreen?: boolean;
+    allowKeyboardNavigation?: boolean;
 
     btnShow?: {
       zoomIn?: boolean;
