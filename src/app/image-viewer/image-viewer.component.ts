@@ -5,7 +5,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
   zoomFactor: 0.1,
   containerBackgroundColor: '#ccc',
-  wheelZoom: true,
+  wheelZoom: false,
   allowFullscreen: true,
   allowKeyboardNavigation: true,
   btnShow: {
@@ -103,8 +103,8 @@ export class ImageViewerComponent implements OnInit {
   scrollZoom(evt) {
     if (this.config.wheelZoom) {
       evt.deltaY > 0 ? this.zoomOut() : this.zoomIn();
+      return false;
     }
-    return false;
   }
 
   rotateClockwise() {
