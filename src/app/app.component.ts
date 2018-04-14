@@ -15,7 +15,8 @@ export class AppComponent {
     'https://www.askideas.com/media/10/Funny-Goat-Closeup-Pouting-Face.jpg'
   ];
 
-  imageIndex = 0;
+  imageIndexOne = 0;
+  imageIndexTwo = 0;
 
   config: ImageViewerConfig = {customBtns: [{name: 'print', icon: 'fa fa-print'}, {name: 'link', icon: 'fa fa-link'}]};
 

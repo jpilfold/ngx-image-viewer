@@ -60,6 +60,7 @@ export class ImageViewerComponent implements OnInit {
   private translateY = 0;
   private prevX: number;
   private prevY: number;
+  private hovered = false;
 
   constructor( @Optional() @Inject('config') public moduleConfig: ImageViewerConfig) { }
 
@@ -149,8 +150,18 @@ export class ImageViewerComponent implements OnInit {
     this.customEvent.emit(new CustomEvent(name, imageIndex));
   }
 
+  @HostListener('mouseover')
+  private onMouseOver() {
+    this.hovered = true;
+  }
+
+  @HostListener('mouseleave')
+  private onMouseLeave() {
+    this.hovered = false;
+  }
+
   private canNavigate(event: any) {
-    return event == null ||  this.config.allowKeyboardNavigation;
+    return event == null ||  (this.config.allowKeyboardNavigation && this.hovered);
   }
 
   private updateStyle() {
