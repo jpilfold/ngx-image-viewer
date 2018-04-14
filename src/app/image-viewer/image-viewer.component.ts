@@ -5,7 +5,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
   zoomFactor: 0.1,
   containerBackgroundColor: '#ccc',
-  wheelZoom: true,
+  wheelZoom: false,
   allowFullscreen: true,
   allowKeyboardNavigation: true,
   btnShow: {
@@ -61,6 +61,7 @@ export class ImageViewerComponent implements OnInit {
   private prevX: number;
   private prevY: number;
   private hovered = false;
+  private loading = false;
 
   constructor( @Optional() @Inject('config') public moduleConfig: ImageViewerConfig) { }
 
@@ -103,8 +104,8 @@ export class ImageViewerComponent implements OnInit {
   scrollZoom(evt) {
     if (this.config.wheelZoom) {
       evt.deltaY > 0 ? this.zoomOut() : this.zoomIn();
+      return false;
     }
-    return false;
   }
 
   rotateClockwise() {
@@ -115,6 +116,14 @@ export class ImageViewerComponent implements OnInit {
   rotateCounterClockwise() {
     this.rotation -= 90;
     this.updateStyle();
+  }
+
+  onLoad() {
+    this.loading = false;
+  }
+
+  onLoadStart() {
+   this.loading = true;
   }
 
   onDragOver(evt) {

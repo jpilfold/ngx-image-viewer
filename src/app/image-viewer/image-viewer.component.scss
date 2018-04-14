@@ -65,3 +65,68 @@ button.default:disabled {
     left: 0;
     right: 0;
 }
+
+.spinner-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.4);  
+    border-radius: 25%;  
+}
+
+.spinner {
+    border-width: 7px;
+    border-style: solid;
+    border-color: #ccc;
+    border-bottom-color: #222; 
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-animation: rotation 2s linear infinite; /* Safari 4+ */
+    -moz-animation:    rotation 2s linear infinite; /* Fx 5+ */
+    -o-animation:      rotation 2s linear infinite; /* Opera 12+ */
+    animation:         rotation 2s linear infinite; /* IE 10+, Fx 29+ */   
+}
+
+@keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
+
+@-webkit-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
+
+@-moz-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
+
+@-o-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
