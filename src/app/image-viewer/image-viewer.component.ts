@@ -61,6 +61,7 @@ export class ImageViewerComponent implements OnInit {
   private prevX: number;
   private prevY: number;
   private hovered = false;
+  private loading = false;
 
   constructor( @Optional() @Inject('config') public moduleConfig: ImageViewerConfig) { }
 
@@ -115,6 +116,14 @@ export class ImageViewerComponent implements OnInit {
   rotateCounterClockwise() {
     this.rotation -= 90;
     this.updateStyle();
+  }
+
+  onLoad() {
+    this.loading = false;
+  }
+
+  onLoadStart() {
+   this.loading = true;
   }
 
   onDragOver(evt) {
