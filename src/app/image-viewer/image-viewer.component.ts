@@ -54,6 +54,7 @@ export class ImageViewerComponent implements OnInit {
 
   public style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
   public fullscreen = false;
+  public loading = false;
   private scale = 1;
   private rotation = 0;
   private translateX = 0;
@@ -61,7 +62,6 @@ export class ImageViewerComponent implements OnInit {
   private prevX: number;
   private prevY: number;
   private hovered = false;
-  private loading = false;
 
   constructor( @Optional() @Inject('config') public moduleConfig: ImageViewerConfig) { }
 
