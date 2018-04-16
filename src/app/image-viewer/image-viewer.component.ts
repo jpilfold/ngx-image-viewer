@@ -54,7 +54,7 @@ export class ImageViewerComponent implements OnInit {
 
   public style = { transform: '', msTransform: '', oTransform: '', webkitTransform: '' };
   public fullscreen = false;
-  public loading = false;
+  public loading = true;
   private scale = 1;
   private rotation = 0;
   private translateX = 0;
@@ -74,6 +74,7 @@ export class ImageViewerComponent implements OnInit {
   @HostListener('window:keyup.ArrowRight',  ['$event'])
   nextImage(event) {
     if (this.canNavigate(event) && this.index < this.src.length - 1) {
+      this.loading = true;
       this.index++;
       this.triggerIndexBinding();
       this.reset();
@@ -83,6 +84,7 @@ export class ImageViewerComponent implements OnInit {
   @HostListener('window:keyup.ArrowLeft', ['$event'])
   prevImage(event) {
     if (this.canNavigate(event) && this.index > 0) {
+      this.loading = true;
       this.index--;
       this.triggerIndexBinding();
       this.reset();
@@ -123,7 +125,7 @@ export class ImageViewerComponent implements OnInit {
   }
 
   onLoadStart() {
-   this.loading = true;
+    this.loading = true;
   }
 
   onDragOver(evt) {
