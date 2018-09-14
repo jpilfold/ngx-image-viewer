@@ -161,6 +161,14 @@ export class ImageViewerComponent implements OnInit {
     this.customEvent.emit(new CustomEvent(name, imageIndex));
   }
 
+  reset() {
+    this.scale = 1;
+    this.rotation = 0;
+    this.translateX = 0;
+    this.translateY = 0;
+    this.updateStyle();
+  }
+
   @HostListener('mouseover')
   private onMouseOver() {
     this.hovered = true;
@@ -194,11 +202,4 @@ export class ImageViewerComponent implements OnInit {
     return result;
   }
 
-  private reset() {
-    this.scale = 1;
-    this.rotation = 0;
-    this.translateX = 0;
-    this.translateY = 0;
-    this.updateStyle();
-  }
 }

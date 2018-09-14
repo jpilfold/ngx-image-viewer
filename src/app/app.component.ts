@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'app';
 
   images = [
-    'test',
     '/assets/pexels-photo-352093.jpeg',
     'https://i.ytimg.com/vi/nlYlNF30bVg/hqdefault.jpg',
     'https://www.askideas.com/media/10/Funny-Goat-Closeup-Pouting-Face.jpg'
