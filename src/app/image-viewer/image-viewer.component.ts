@@ -137,7 +137,9 @@ export class ImageViewerComponent implements OnInit {
   }
 
   onDragStart(evt) {
-    evt.dataTransfer.setDragImage(evt.target.nextElementSibling, 0, 0);
+    if (evt.dataTransfer && evt.dataTransfer.setDragImage) {
+      evt.dataTransfer.setDragImage(evt.target.nextElementSibling, 0, 0);
+    }
     this.prevX = evt.clientX;
     this.prevY = evt.clientY;
   }
