@@ -7,33 +7,33 @@
     <div class="spinner"></div>
   </div>
 
-  <button [class]="config.btnClass" *ngIf="config.btnShow.rotateCounterClockwise" (click)="rotateCounterClockwise()">
+  <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.rotateCounterClockwise" (click)="rotateCounterClockwise()">
     <span [class]="config.btnIcons.rotateCounterClockwise"></span>
   </button>
-  <button [class]="config.btnClass" *ngIf="config.btnShow.rotateClockwise" (click)="rotateClockwise()">
+  <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.rotateClockwise" (click)="rotateClockwise()">
     <span [class]="config.btnIcons.rotateClockwise"></span>
   </button>
 
-  <button [class]="config.btnClass" *ngIf="config.btnShow.zoomOut" (click)="zoomOut()">
+  <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.zoomOut" (click)="zoomOut()">
     <span [class]="config.btnIcons.zoomOut"></span>
   </button>
-  <button [class]="config.btnClass" *ngIf="config.btnShow.zoomIn" (click)="zoomIn()">
+  <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.zoomIn" (click)="zoomIn()">
     <span [class]="config.btnIcons.zoomIn"></span>
   </button>
 
-  <button [class]="config.btnClass" *ngFor="let cBtn of config.customBtns" (click)="fireCustomEvent(cBtn.name, index)">
+  <button type="button" [class]="config.btnClass" *ngFor="let cBtn of config.customBtns" (click)="fireCustomEvent(cBtn.name, index)">
     <span [class]="cBtn.icon"></span>
   </button>
 
-  <button id="ngx-fs-btn" [class]="config.btnClass" (click)="toggleFullscreen()" *ngIf="config.allowFullscreen">
+  <button type="button" id="ngx-fs-btn" [class]="config.btnClass" (click)="toggleFullscreen()" *ngIf="config.allowFullscreen">
     <span [class]="config.btnIcons.fullscreen"></span>
   </button>
 
   <div class="nav-button-container" *ngIf="src.length > 1">
-    <button [class]="config.btnClass" (click)="prevImage()" [disabled]="index === 0">
+    <button type="button" [class]="config.btnClass" (click)="prevImage()" [disabled]="index === 0">
       <span [class]="config.btnIcons.prev"></span>
     </button>
-    <button [class]="config.btnClass" (click)="nextImage()" [disabled]="index === src.length - 1">
+    <button type="button" [class]="config.btnClass" (click)="nextImage()" [disabled]="index === src.length - 1">
       <span [class]="config.btnIcons.next"></span>
     </button>
   </div>
