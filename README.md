@@ -3,7 +3,7 @@
 A configurable Angular image viewer component, compatible with Angular 2.x, 4.x and 5.x
 
 ## Features:
- * Compatible with Angular 2.x, 4.x and 5.x
+ * Compatible with Angular 2.x, 4.x, 5.x, 6.x, 7.x, 8.x
  * Configurable
  * Rotate image
  * Zoom image
