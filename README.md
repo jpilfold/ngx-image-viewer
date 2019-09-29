@@ -1,9 +1,9 @@
 # NgxImageViewer
 
-A configurable Angular image viewer component, compatible with Angular 2.x, 4.x and 5.x
+A configurable Angular image viewer component, compatible with Angular 2+
 
 ## Features:
- * Compatible with Angular 2.x, 4.x, 5.x, 6.x, 7.x, 8.x
+ * Compatible with Angular 2+
  * Configurable
  * Rotate image
  * Zoom image
