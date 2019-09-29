@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Optional, Inject, Output, EventEmitter, HostListener} from '@angular/core';
+import { Component, OnInit, Input, Optional, Inject, Output, EventEmitter, HostListener } from '@angular/core';
 import { ImageViewerConfig, CustomEvent } from './image-viewer-config.model';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
@@ -63,7 +63,7 @@ export class ImageViewerComponent implements OnInit {
   private prevY: number;
   private hovered = false;
 
-  constructor( @Optional() @Inject('config') public moduleConfig: ImageViewerConfig) { }
+  constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig) { }
 
   ngOnInit() {
     const merged = this.mergeConfig(DEFAULT_CONFIG, this.moduleConfig);
@@ -71,7 +71,7 @@ export class ImageViewerComponent implements OnInit {
     this.triggerConfigBinding();
   }
 
-  @HostListener('window:keyup.ArrowRight',  ['$event'])
+  @HostListener('window:keyup.ArrowRight', ['$event'])
   nextImage(event) {
     if (this.canNavigate(event) && this.index < this.src.length - 1) {
       this.loading = true;
@@ -172,17 +172,17 @@ export class ImageViewerComponent implements OnInit {
   }
 
   @HostListener('mouseover')
-  private onMouseOver() {
+  onMouseOver() {
     this.hovered = true;
   }
 
   @HostListener('mouseleave')
-  private onMouseLeave() {
+  onMouseLeave() {
     this.hovered = false;
   }
 
   private canNavigate(event: any) {
-    return event == null ||  (this.config.allowKeyboardNavigation && this.hovered);
+    return event == null || (this.config.allowKeyboardNavigation && this.hovered);
   }
 
   private updateStyle() {
