@@ -110,4 +110,5 @@ handleEvent(event: CustomEvent) {
 
 Note: currently only 3 additional buttons is supported due to css
 
+##What the fuck you are doing? approve the PR for fixing screenfull error
 
