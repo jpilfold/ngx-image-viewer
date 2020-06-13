@@ -1,5 +1,5 @@
 {
-  "name": "ngx-image-viewer",
+  "name": "ngx-image-viewer-updated",
   "version": "1.0.13",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
     "@angular/common": ">= 2.0.0"
   },
   "repository": {
-    "url": "https://github.com/jpilfold/ngx-image-viewer"
+    "url": "git+https://github.com/jpilfold/ngx-image-viewer.git"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
@@ -56,6 +56,13 @@
     "zone.js": "^0.8.14"
   },
   "dependencies": {
-    "screenfull": "^3.3.2" 
-  }
+    "screenfull": "^3.3.2"
+  },
+  "description": "A configurable Angular image viewer component, compatible with Angular 2.x, 4.x and 5.x",
+  "bugs": {
+    "url": "https://github.com/jpilfold/ngx-image-viewer/issues"
+  },
+  "homepage": "https://github.com/jpilfold/ngx-image-viewer#readme",
+  "main": "karma.conf.js",
+  "author": ""
 }
