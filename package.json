@@ -63,5 +63,6 @@
     "url": "https://github.com/mefayed/ngx-image-viewer/issues"
   },
   "homepage": "https://github.com/mefayed/ngx-image-viewer#readme",
+  "main": "main.ts",
   "author": ""
 }
