@@ -1,6 +1,6 @@
 {
   "name": "ngx-image-viewer-updated",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -17,7 +17,7 @@
     "@angular/common": ">= 2.0.0"
   },
   "repository": {
-    "url": "git+https://github.com/jpilfold/ngx-image-viewer.git"
+    "url": "https://github.com/mefayed/ngx-image-viewer"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
@@ -57,12 +57,5 @@
   },
   "dependencies": {
     "screenfull": "^3.3.2"
-  },
-  "description": "A configurable Angular image viewer component, compatible with Angular 2.x, 4.x and 5.x",
-  "bugs": {
-    "url": "https://github.com/mefayed/ngx-image-viewer/issues"
-  },
-  "homepage": "https://github.com/mefayed/ngx-image-viewer#readme",
-  "main": "main.ts",
-  "author": ""
+  }
 }
