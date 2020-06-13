@@ -56,6 +56,6 @@
     "zone.js": "^0.8.14"
   },
   "dependencies": {
-    "screenfull": "^3.3.2"
+    "screenfull": "https://github.com/mefayed/screenfullfix.js.git"
   }
 }
