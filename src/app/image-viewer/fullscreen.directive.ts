@@ -15,7 +15,11 @@ export class ToggleFullscreenDirective implements OnChanges {
         if (this.isFullscreen && screenfull.enabled) {
             screenfull.request(this.el.nativeElement);
         } else if (screenfull.enabled) {
-            screenfull.exit();
+            try {
+                screenfull.exit();
+            } catch (error) {
+                console.log("No document to exit from full screen")
+            }
         }
     }
 

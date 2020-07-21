@@ -1,6 +1,6 @@
 {
-  "name": "ngx-image-viewer",
-  "version": "1.0.13",
+  "name": "ngx-image-viewer-updated",
+  "version": "1.0.18",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -17,7 +17,7 @@
     "@angular/common": ">= 2.0.0"
   },
   "repository": {
-    "url": "https://github.com/jpilfold/ngx-image-viewer"
+    "url": "https://github.com/mefayed/ngx-image-viewer"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
