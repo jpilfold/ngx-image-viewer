@@ -29,11 +29,11 @@
     <span [class]="config.btnIcons.fullscreen"></span>
   </button>
 
-  <div class="nav-button-container" *ngIf="src.length > 1">
-    <button type="button" [class]="config.btnClass" (click)="prevImage()" [disabled]="index === 0">
+ <div class="nav-button-container" *ngIf="src.length > 1">
+    <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.prev" (click)="prevImage()" [disabled]="index === 0">
       <span [class]="config.btnIcons.prev"></span>
     </button>
-    <button type="button" [class]="config.btnClass" (click)="nextImage()" [disabled]="index === src.length - 1">
+    <button type="button" [class]="config.btnClass" *ngIf="config.btnShow.next" (click)="nextImage()" [disabled]="index === src.length - 1">
       <span [class]="config.btnIcons.next"></span>
     </button>
   </div>
